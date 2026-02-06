@@ -28,7 +28,7 @@
     </nav>
 
     <main id="inicio" class="cabecalho">
-            <img src="./imgs/foto_perfil3.jpg" alt="Foto Perfil Lucas" class="foto-perfil">
+            <img src="./imgs/Foto de Perfil5.jpeg" alt="Foto Perfil Lucas" class="foto-perfil">
             <h1>Lucas Eduardo Pereira da Cruz</h1>
             <p class="cabecalho-sub-titulo">Estudante de DSM e um futuro desenvolvedor</p>
     </main>    
@@ -37,7 +37,7 @@
             <h2 class="sobre-titulo">Sobre Mim</h2>
             <div class="sobre-caixa">
                 <p class="sobre-paragrafo">Olá, sou estudante de Desenvolvimento de software multiplafatorma na Fatec Jahu,
-                    tenho 19 anos e sou um iniciante na área de T.I, mas tenho um sonho em ter uma carreira profissional nesta área,
+                    tenho 19 anos, natural de Jaú-SP e sou um iniciante na área de T.I, mas tenho um sonho em ter uma carreira profissional nesta área,
                     já fiz curso de Assistente administrativo, fiz cursos onlines de Marketing, planejamento de metas e de 
                     introdução a cibersegurança, já utilizo linguagens como HTML, CSS, JS, Banco de dados, e estou aprendendo sobre Python, 
                     C#, entre outras. Seguimos evoluindo a cada dia.   
@@ -53,24 +53,30 @@
                     <div class="caixa-textos-projeto">
                        <h3 class="info-projetos">Route Books</h3>
                         <p class="paragrafo-projetos">O blog de viagens para aventureiros</p> 
+                        <a class="link-projeto" href="https://github.com/TiagoGrizzo/PI-Route-Books">Veja o projeto!</a>
                     </div>
                 </div>
 
             </div>
+
         </section>
+
 
         <section id="contatos" class="contatos">
             <h2 class="contatos-titulo">Entre em contato</h2>
-            <form class="formulario-contato" id="formulario">
-                <div class="grupo-form">
-                    <input placeholder="Nome" class="campo-form">
+            <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)"> 
+                    <input placeholder="Nome" class="campo-form" id="nome">
                 </div>
                 <div class="grupo-form">
-                    <textarea class="campo-form" placeholder="Digite sua mensagem"></textarea>
+                    <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem"></textarea>
                 </div>
 
                 <button type="submit" class="botao-form">Enviar Whatsapp</button>
             </form>
         </section>
+
+
+        <script src="JS/script.js"></script>
+        
 </body>
 </html>

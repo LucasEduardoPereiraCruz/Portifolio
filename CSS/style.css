@@ -6,11 +6,12 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Deixa a rolagem/scroll mais suave*/
+    scroll-behavior: smooth;
+    /* Deixa a rolagem/scroll mais suave*/
 }
 
 :root {
-    --primaria: #4f46e5;
+    --primaria: #6afcc9;
     --secundaria: #4f46e5;
     --escuro: #0f172a;
     --maisEscuro: #0a0f1c;
@@ -46,7 +47,7 @@ body {
     color: var(--claro);
     font-weight: 500;
     position: relative;
-    padding:  0.5rem 0;
+    padding: 0.5rem 0;
 }
 
 .menu-link::after {
@@ -61,15 +62,15 @@ body {
 }
 
 .menu-link:hover::after {
-   width: 100%; 
+    width: 100%;
 }
 
 /* After -> Depois, Before -> Antes */
 
 
 .foto-perfil {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
     box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
     border-radius: 50%;
     border: 4px solid var(--vidro);
@@ -113,7 +114,8 @@ h1 {
 .sobre-caixa {
     padding: 2rem;
     max-width: 850px;
-    margin: 0 auto; /* Utilizado para centralizar itens */
+    margin: 0 auto;
+    /* Utilizado para centralizar itens */
     border-radius: 16px;
     border: 1px solid var(--claro);
     backdrop-filter: blur(10px);
@@ -131,26 +133,31 @@ h1 {
 }
 
 .projetos-caixa {
-    display: grid; /* Organiza os itens em forma de grade */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ele repete para todos os itens. fr significa fração, auto-fit encaixa tudo na tela*/
+    display: grid;
+    /* Organiza os itens em forma de grade */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Ele repete para todos os itens. fr significa fração, auto-fit encaixa tudo na tela*/
     gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .projetos-card {
-   background: rgba(255, 255, 255, 0.05);
-   border-radius: 16px;
-   backdrop-filter: blur(10px);
-   border: 1px solid var(--vidro);
-   overflow: hidden; /* Esconde a sobra da imagem */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    /* Esconde a sobra da imagem */
 }
 
 .projetos-imagem {
     height: 300px;
     width: 100%;
-    object-fit: cover; /* Ele manda a imagem (ou vídeo) preencher todo o espaço do elemento, sem distorcer, mesmo que precise cortar um pedaço. */
-    object-position: center 45%; /* é a posição do objeto. a % faz a imagem subir ou descer sem mexer no card */
+    object-fit: cover;
+    /* Ele manda a imagem (ou vídeo) preencher todo o espaço do elemento, sem distorcer, mesmo que precise cortar um pedaço. */
+    object-position: center 45%;
+    /* é a posição do objeto. a % faz a imagem subir ou descer sem mexer no card */
 }
 
 .projetos-titulos {
@@ -161,8 +168,10 @@ h1 {
 
 .projetos-card:hover {
     box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
-    transform: translateY(-10px) scale(1.03); /* movimentar no eixo y e mudando a escala dele */
-    transition: all 0.4s ease; /* Transição */
+    transform: translateY(-10px) scale(1.03);
+    /* movimentar no eixo y e mudando a escala dele */
+    transition: all 0.4s ease;
+    /* Transição */
     cursor: pointer;
 }
 
@@ -176,9 +185,18 @@ h1 {
 
 .paragrafo-projetos {
     color: rgba(226, 232, 240, 0.8);
-    line-height: 1.25rem; /* Altura da linha */
+    line-height: 1.25rem;
+    /* Altura da linha */
 }
 
+
+.link-projeto{
+    display: flex;
+    justify-content: left;
+    color: var(--claro);
+    margin-top: 5px;
+    
+}
 
 .contatos {
     padding: 6rem 2rem;
@@ -209,16 +227,20 @@ h1 {
     color: var(--claro);
     border: 1px solid var(--vidro);
     outline: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+
 }
 
 
-.campo-form:focus{
+.campo-form:focus {
     border-color: var(--secundaria);
     box-shadow: rgba(79, 70, 229, 0.3);
 }
 
-.grupo-form{
-    margin-bottom: 1.5rem;
+.grupo-form {
+    margin-bottom: 0.5rem;
 }
 
 
@@ -230,16 +252,35 @@ h1 {
     cursor: pointer;
     font-weight: bold;
     width: 100%;
-    transition: all 0.4 ease;
+    transition: all 0.4s ease;
+    position: relative;
 }
 
-.botao-form:hover{
+.botao-form::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(45deg, var(--secundaria), var(--primaria));
+    border-radius: inherit;
+    /* Herda o border-radius do pai - botao-form */
+    filter: blur(3px);
+    opacity: 0;
+    z-index: -1;
+    /* Faz com que o brilho não atrapalhe a escrita "Enviar Whats" */
+    pointer-events: none;
+    /* Faz com que o degradê não afeta a caixa de nome e pergunta */
+}
+
+.botao-form:hover {
     transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+.botao-form:hover::before {
+    opacity: 0.6;
 }
 
 
-.particulas{
+.particulas {
     position: fixed;
     top: 0;
     left: 0;
@@ -247,9 +288,9 @@ h1 {
     height: 100%;
     z-index: -1;
     opacity: 0.5;
-    background: radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
-    var(--escuro);
+    background: radial-gradient(circle at 2% 10%, rgba(86, 157, 255, 0.604) 0%, transparent 15%),
+        radial-gradient(circle at 92% 100%, rgba(86, 157, 255, 0.604) 0%, transparent 15%),
+        var(--escuro);
 
     /* radial-gradient → gradiente em forma de círculo
 
@@ -268,13 +309,170 @@ h1 {
     transparent 20% → some totalmente em 20% do raio */
 }
 
-@keyframes flutuar { /* Criando animação na foto de perfil */
-    0%, 100% {
-        transform: translateY(0); /* Tanto no momento 0 (início), quanto no momento 100 (final)
+@keyframes flutuar {
+
+    /* Criando animação na foto de perfil */
+    0%,
+    100% {
+        transform: translateY(0);
+        /* Tanto no momento 0 (início), quanto no momento 100 (final)
         ele vai estar no msm lugar */
     }
 
     50% {
         transform: translateY(-20%);
+    }
+}
+
+
+
+    /* RESPONSIVIDADE */
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    /* NAVBAR */
+    .menu {
+        gap: 2rem;
+    }
+
+    /* CABEÇALHO */
+    h1 {
+        font-size: 2.8rem;
+        text-align: center;
+    }
+
+    .cabecalho-sub-titulo {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* SOBRE */
+    .sobre-titulo {
+        font-size: 2.5rem;
+    }
+
+    .sobre-paragrafo {
+        font-size: 1.05rem;
+    }
+
+    /* PROJETOS */
+    .projetos-titulos {
+        font-size: 2.2rem;
+    }
+
+    .projetos-imagem {
+        height: 260px;
+    }
+
+    /* CONTATO */
+    .contatos-titulo {
+        font-size: 2.2rem;
+    }
+
+    .formulario-contato {
+        padding: 1.8rem;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar {
+        padding: 1rem;
+    }
+
+    .menu {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    .menu-link {
+        font-size: 0.9rem;
+    }
+
+    /* CABEÇALHO */
+    .cabecalho {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin: 15px 0;
+    }
+
+    .cabecalho-sub-titulo {
+        font-size: 1.05rem;
+    }
+
+    .foto-perfil {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* SEÇÕES */
+    .sobre,
+    .projetos,
+    .contatos {
+        padding: 4rem 1.2rem;
+    }
+
+    .sobre-titulo,
+    .projetos-titulos,
+    .contatos-titulo {
+        font-size: 2rem;
+    }
+
+    .sobre-paragrafo {
+        font-size: 1rem;
+    }
+
+    /* PROJETOS */
+    .projetos-imagem {
+        height: 220px;
+    }
+
+    /* FORMULÁRIO */
+    .formulario-contato {
+        padding: 1.4rem;
+    }
+
+    .campo-form {
+        font-size: 0.95rem;
+    }
+
+    .botao-form {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+}
+
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    .menu {
+        gap: 0.8rem;
+    }
+
+    .menu-link {
+        font-size: 0.85rem;
     }
 }
